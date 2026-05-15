@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mukhlisa Rakhmatova | Premium Nutritionist & Health Architect</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary-color: #1a2e26;
+            --accent-color: #d4af37;
+            --bg-light: #fdfbf7;
+            --text-dark: #121212;
+            --text-gray: #4a4a4a;
+            --white: #ffffff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .serif {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 8%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary-color);
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dark);
+            margin-left: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--accent-color); }
+
+        /* Universal Image Style */
+        .bg-img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-color: #e0e0e0; /* placeholder color */
+        }
+
+        /* Hero Section */
+        #hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 100px 8% 50px;
+            background: linear-gradient(to right, #f3f3f3 60%, var(--primary-color) 40%);
+        }
+
+        .hero-content { flex: 1; padding-right: 50px; }
+        .hero-badge {
+            color: var(--accent-color);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            display: block;
+            margin-bottom: 10px;
+        }
+
+        .hero-content h1 { font-size: 4.5rem; line-height: 1.1; margin-bottom: 20px; }
+        .hero-image {
+            flex: 1;
+            height: 600px;
+            border-radius: 10px;
+            box-shadow: -20px 20px 40px rgba(0,0,0,0.3);
+        }
+
+        /* Authority Section */
+        #authority { padding: 100px 8%; text-align: center; background-color: var(--white); }
+        .section-title { font-size: 3rem; margin-bottom: 50px; }
+        .feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
+        .feature-card { padding: 40px; background: var(--bg-light); border-radius: 15px; }
+        .feature-card i { font-size: 2.5rem; color: var(--accent-color); margin-bottom: 20px; }
+
+        /* Courses Section */
+        #courses { padding: 100px 8%; background: var(--primary-color); color: var(--white); }
+        .course-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 30px; margin-top: 50px; }
+        .course-card { 
+            background: rgba(255,255,255,0.05); 
+            border: 1px solid rgba(255,255,255,0.1); 
+            border-radius: 20px; 
+            overflow: hidden; 
+        }
+        .course-img { height: 300px; }
+        .course-info { padding: 30px; }
+        .course-info h3 { color: var(--accent-color); margin-bottom: 15px; }
+
+        /* Results Section */
+        #results { padding: 100px 8%; background: var(--bg-light); }
+        .results-slider { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 50px; }
+        .result-box { display: flex; gap: 5px; margin-bottom: 15px; }
+        .before, .after { 
+            flex: 1; 
+            height: 350px; 
+            border-radius: 5px; 
+            display: flex; 
+            align-items: flex-end; 
+            justify-content: center; 
+            padding-bottom: 10px;
+            color: #fff;
+            font-weight: bold;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+        }
+
+        /* Contact Section */
+        #contact { padding: 80px 8%; text-align: center; }
+        .social-buttons { display: flex; justify-content: center; gap: 20px; margin-top: 40px; }
+        .social-btn { 
+            padding: 15px 35px; border-radius: 50px; color: white; 
+            text-decoration: none; font-weight: 700; transition: 0.3s; 
+        }
+        .btn-tg { background: #0088cc; }
+        .btn-ig { background: linear-gradient(45deg, #f09433, #bc1888); }
+        .btn-yt { background: #ff0000; }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            #hero { 
+                flex-direction: column; 
+                background: var(--bg-light); 
+                text-align: center; 
+                padding-top: 140px;
+            }
+            .hero-content { padding-right: 0; margin-bottom: 50px; }
+            .hero-content h1 { font-size: 3rem; }
+            .hero-image { width: 100%; height: 450px; }
+            .feature-grid, .course-grid, .results-slider { grid-template-columns: 1fr; }
+            .social-buttons { flex-direction: column; align-items: center; }
+            .social-btn { width: 280px; }
+        }
+
+        /* ... (oldingi stillar saqlanadi) ... */
+
+        /* Responsive Design uchun yangilangan qism */
+        @media (max-width: 1024px) {
+            .hero-content h1 { font-size: 3.5rem; }
+            nav { padding: 15px 5%; }
+        }
+
+        @media (max-width: 768px) {
+            /* Navigatsiyani markazlash */
+            nav {
+                flex-direction: column;
+                padding: 10px;
+            }
+            .nav-links {
+                margin-top: 10px;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-links a {
+                margin-left: 0;
+                margin: 0 10px;
+                font-size: 0.8rem;
+            }
+
+            /* Hero Section */
+            #hero {
+                margin-top: 100px;
+                flex-direction: column;
+                background: var(--bg-light);
+                text-align: center;
+                padding: 120px 5% 50px;
+            }
+            .hero-content {
+                padding-right: 0;
+                margin-bottom: 40px;
+            }
+            .hero-content h1 {
+                font-size: 2.8rem;
+                line-height: 1.2;
+            }
+            .hero-image {
+                margin-top: -100px;
+                width: 100%;
+                height: 400px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            }
+
+            /* Gridlarni bir ustunga o'tkazish */
+            .feature-grid, .course-grid, .results-slider {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .section-title {
+                font-size: 2.2rem;
+                margin-bottom: 30px;
+            }
+
+            /* Natijalar (Before/After) qismi */
+            .result-box {
+                flex-direction: row; /* Yonma-yon qolgani ma'qul, lekin kichraytiramiz */
+            }
+            .before, .after {
+                height: 280px;
+            }
+
+            /* Tugmalar */
+            .social-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            .social-btn {
+                width: 100%;
+                max-width: 300px;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            .hero-badge {
+                font-size: 0.7rem;
+                letter-spacing: 2px;
+            }
+            .course-img {
+                height: 200px;
+            }
+            .before, .after {
+                height: 220px;
+                font-size: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">MUKHLISA R.</div>
+        <div class="nav-links">
+            <a href="#hero">Asosiy</a>
+            <a href="#authority">Ekspertiza</a>
+            <a href="#courses">Kurslar</a>
+            <a href="#results">Natijalar</a>
+            <a href="#contact">Aloqa</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <div class="hero-content">
+            <span class="hero-badge">Xalqaro darajadagi ekspert</span>
+            <h1>Mukhlisa <br><span class="serif" style="color: var(--accent-color);">Rakhmatova</span></h1>
+            <p>8 yillik ilmiy va amaliy tajribaga ega bo'lgan etakchi nutriciolog. Premium salomatlik arxitektori.</p>
+            <a href="#contact" style="display: inline-block; padding: 18px 45px; background: var(--primary-color); color: #fff; text-decoration: none; border-radius: 5px; font-weight: 700;">Maslahat olish</a>
+        </div>
+        <!-- ПОРТРЕТ ТУТ -->
+        <div class="hero-image bg-img" style="background-image: url('mukhlisa.png');"></div>
+    </section>
+
+    <!-- Authority Section -->
+    <section id="authority">
+        <h2 class="section-title">Nega aynan Mukhlisa?</h2>
+        <div class="feature-grid">
+            <div class="feature-card">
+                <i class="fa-solid fa-microscope"></i>
+                <h3>Ilmiy Yondashuv</h3>
+                <p>8 yildan ortiq chuqur nutriciologiya tajriba.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-crown"></i>
+                <h3>Eksklyuziv Metodika</h3>
+                <p>Qattiq cheklovlarsiz shaxsiy tiklanish tizimi.</p>
+            </div>
+            <div class="feature-card">
+                <i class="fa-solid fa-award"></i>
+                <h3>Global Standart</h3>
+                <p>Dunyo miqyosidagi bilimlar uyg'unligi.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses">
+        <h2 class="section-title" style="text-align: center;">Mualliflik Kurslari</h2>
+        <div class="course-grid">
+            <div class="course-card">
+                <!-- КУРС 1 КАРТИНКА -->
+                <div class="course-img bg-img" style="background-image: url('cell.png');"></div>
+                <div class="course-info">
+                    <h3>"Hujayraviy Tiklanish"</h3>
+                    <p>Metabolizmni maksimal darajaga ko'tarish bo'yicha 21 kunlik marafon.</p>
+                </div>
+            </div>
+            <div class="course-card">
+                <!-- КУРС 2 КАРТИНКА -->
+                <div class="course-img bg-img" style="background-image: url('hormones.png');"></div>
+                <div class="course-info">
+                    <h3>"Gormonal Balans"</h3>
+                    <p>Ayollar salomatligini ichkaridan boshqarishni o'rgatuvchi professional kurs.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section id="results">
+        <h2 class="section-title" style="text-align: center;">Natijalar</h2>
+        <div class="results-slider">
+            <!-- Result 1 -->
+            <div class="result-item">
+                <div class="result-box">
+                    <div class="before bg-img" style="background-image: url('do1.png');">OLDIN</div>
+                    <div class="after bg-img" style="background-image: url('posle1.png');">KEYIN</div>
+                </div>
+                <p><strong>-25 kg</strong> va ideal ter</p>
+            </div>
+
+            <!-- Result 2 -->
+            <div class="result-item">
+                <div class="result-box">
+                    <div class="before bg-img" style="background-image: url('do2.png');">OLDIN</div>
+                    <div class="after bg-img" style="background-image: url('posle2.png');">KEYIN</div>
+                </div>
+                <p><strong>-11 kg</strong> vs garmonal balans tiklanishi</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contacts -->
+    <section id="contact">
+        <h2 class="section-title">Bog'lanish</h2>
+        <div class="social-buttons">
+            <a href="https://t.me/nutrihayotmukhlisa" target="_blank" class="social-btn btn-tg"><i class="fa-brands fa-telegram"></i> Telegram</a>
+            <a href="https://www.instagram.com/mukhlisa_nutriciolog?igsh=MW01YjFrem1qaWt6NQ==" target="_blank" class="social-btn btn-ig"><i class="fa-brands fa-instagram"></i> Instagram</a>
+            <a href="https://youtube.com/@mukhlisa_nutriciolog?si=THtfQUlPCpTIEA1B" target="" class="social-btn btn-yt"><i class="fa-brands fa-youtube"></i> YouTube</a>
+        </div>
+    </section>
+
+    <footer style="padding: 40px; text-align: center; border-top: 1px solid #eee; color: var(--text-gray);">
+        <p>&copy; 2026 Mukhlisa Rakhmatova. Design by Premium Excellence.</p>
+    </footer>
+
+</body>
+</html>
